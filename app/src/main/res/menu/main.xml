@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.maryland.leafsnap.activity.MainActivity">
+
+    <item
+        android:id="@+id/action_snap_it"
+        android:title="@string/title_action_snap"
+        android:icon="@drawable/ic_action_flash_on"
+        app:actionLayout="@layout/action_button_snap_it"
+        app:showAsAction="always" />
+
+</menu>
