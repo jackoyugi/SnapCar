@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">SnapCar</string>
+    <string name="white_bg_instr" />
+    <string name="title_home_tab" translatable="false">Home</string>
+    <string name="title_browse_tab" translatable="false">Browse</string>
+    <string name="title_collection_tab" translatable="false">Collection</string>
+    <string name="title_options_tab" translatable="false">Options</string>
+    <string name="title_action_snap" translatable="false">Snap it!</string>
+    <string name="action_about" translatable="false">About</string>
+    <string name="action_help" translatable="false">Help</string>
+    <string name="tab_icon_description" translatable="false">Tab icon.</string>
+    <string name="logo_description" translatable="false">Applciation logo.</string>
+    <string name="thumb_description" translatable="false">Thumbnail in species list item.</string>
+    <string name="rand_thumb_description" translatable="false">Thumbnail displaying random species.</string>
+    <string name="search_view_hint" translatable="false">Search</string>
+    <string name="todo" translatable="false">TODO!</string>
+    <string name="title_activity_species_details_acitivity">SpeciesDetailsAcitivity</string>
+    <string name="hide_picker_text">Tap large image to hide toolbar.</string>
+    <string name="species_commom_name">Commom name</string>
+    <string name="species_scientific_name">Scientific name</string>
+    <string name="species_description">Description</string>
+    <string name="species_habitat">Habitat:</string>
+    <string name="species_growth">Growth habit:</string>
+    <string name="species_bloom">Bloom time:</string>
+    <string name="species_presence">Presence in the US:</string>
+    <string name="species_longevity">Longevity: </string>
+    <string name="option_account">Account</string>
+    <string name="option_photo_size">Photo upload size</string>
+    <string name="option_database">Database</string>
+    <string name="current_user">Current user:</string>
+    <string name="username">Username</string>
+    <string name="current_version">Current version:</string>
+    <string name="version">1</string>
+    <string name="title_activity_options_account">Account</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_options_camera">Photo Upload Size</string>
+    <string name="title_activity_options_database">Database</string>
+    <string name="new_account">New account</string>
+    <string name="change_username">Change username</string>
+    <string name="different_login">Log in as different user</string>
+    <string name="title_activity_account_action">AccountActionActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="password">Password</string>
+    <string name="account_action">Account action</string>
+    <string name="create_account">Create account</string>
+    <string name="update_account">Update account</string>
+    <string name="login_account">Login</string>
+    <string name="not_logged_in">Not logged in</string>
+    <string name="fill_fields_warning">Please fill in all fields.</string>
+    <string name="login_warning">Please login first.</string>
+    <string name="collection_sync_success">Collection successfully synced.</string>
+    <string name="collection_sync_progress">User collection sync in progress.</string>
+    <string name="empty_collection">You haven\'t done any collecting yet.</string>
+    <string name="start_collection">Start your collection by tapping on the Snap It! button</string>
+    <string name="title_activity_collected_leaf">CollectedLeafActivity</string>
+    <string name="snap_results">Snap It! Results</string>
+    <string name="user_collection">\'s Collection</string>
+    <string name="unlabeled_species">Unlabeled species</string>
+    <string name="collected">Collected </string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="white_bg_instr">Place leaf on a white background.</string>
+    <string name="center_leaf_instr">Center leaf in the frame.</string>
+    <string name="gallery">Gallery</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_upload_image_activty">Uploading Image</string>
+    <string name="uploading_image">Uploading image.</string>
+    <string name="action">Action</string>
+    <string name="delete">Delete</string>
+    <string name="label">Label</string>
+    <string name="confirm_delete">Are you sure you want to delete?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="deletion_error">"Deletion failed, most likely to the lack of connectivity."</string>
+    <string name="labeling_error">"Labeling failed, most likely to the lack of connectivity."</string>
+
+</resources>

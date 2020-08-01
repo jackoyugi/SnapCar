@@ -1,6 +1,7 @@
 package co.ke.biofit.snapcar.util;
 
-import android.graphics.Camera;
+//import android.graphics.Camera;
+import android.hardware.Camera;
 import android.os.Environment;
 import android.util.Log;
 import android.view.Surface;
@@ -14,6 +15,9 @@ import co.ke.biofit.snapcar.actvity.CameraActivity;
 public class MediaUtils {
 
     private static final String TAG = "MEDIA_UTILS";
+    private static final long MINIMUM_FREE_SPACE_BYTES = 104857600;
+
+    private static final String IMAGE_PATTERN = "([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)";
 
     /* Checks if external storage is available for read and write */
     public static boolean isExternalStorageWritable() {
@@ -44,11 +48,10 @@ public class MediaUtils {
         return mediaFile;
     }
 
-    public static void setCameraDisplayOrientation(CameraActivity cameraActivity, int i, Camera mCamera) {
-        Camera.CameraInfo info =
-                new Camera.CameraInfo();
+    public static void setCameraDisplayOrientation(CameraActivity cameraActivity, int cameraId, android.hardware.Camera mCamera) {
+        Camera.CameraInfo info = new Camera.CameraInfo();
         Camera.getCameraInfo(cameraId, info);
-        int rotation = activity.getWindowManager().getDefaultDisplay().getRotation();
+        int rotation = cameraActivity.getWindowManager().getDefaultDisplay().getRotation();
         int degrees = 0;
         switch (rotation) {
             case Surface.ROTATION_0:
@@ -71,7 +74,7 @@ public class MediaUtils {
         } else {  // back-facing
             result = (info.orientation - degrees + 360) % 360;
         }
-        camera.setDisplayOrientation(result);
+        mCamera.setDisplayOrientation(result);
     }
 
 }

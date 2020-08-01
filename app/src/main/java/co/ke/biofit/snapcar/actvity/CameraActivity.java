@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Camera;
+//import android.graphics.Camera;
 import android.graphics.Matrix;
+import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -18,18 +19,21 @@ import java.io.FileOutputStream;
 
 import co.ke.biofit.snapcar.R;
 import co.ke.biofit.snapcar.util.MediaUtils;
+import co.ke.biofit.snapcar.util.CameraPreview;
 
 public class CameraActivity extends Activity {
     private static final String TAG = "CAMERA_ACTIVITY";
 
-    private Camera.PictureCallback mPicture = new Camera.PictureCallback() {
+    private final android.hardware.Camera.PictureCallback mPicture = new android.hardware.Camera.PictureCallback() {
         @Override
-        public void onPictureTaken(byte[] data, Camera camera) {
+        public void onPictureTaken(byte[] bytes, android.hardware.Camera camera) {
+
             File pictureFile = MediaUtils.getPublicDirectoryOutputMediaFile();
             if (pictureFile == null) {
                 Log.d(TAG, "Error creating media file, check storage permissions.");
                 return;
             }
+            byte[] data = new byte[0];
             Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
             Bitmap oldBitmap = bitmap;
             Matrix matrix = new Matrix();
@@ -51,8 +55,11 @@ public class CameraActivity extends Activity {
             finish();
         }
     };
+
+
     private static final int IMAGE_PICKER_SELECT = 999;
     private Camera mCamera;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +70,6 @@ public class CameraActivity extends Activity {
         mCamera = getCameraInstance();
         if (mCamera != null) {
             MediaUtils.setCameraDisplayOrientation(this, 0, mCamera);
-
             CameraPreview cPreview = new CameraPreview(this, mCamera);
             FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
             preview.addView(cPreview);
@@ -74,7 +80,9 @@ public class CameraActivity extends Activity {
 
     public void onCaptureButtonClick(View v) {
         mCamera.takePicture(null, null, mPicture);
+
     }
+
 
     public void onCancelButtonClick(View v) {
         finish();
@@ -104,8 +112,6 @@ public class CameraActivity extends Activity {
             Log.d(TAG, "Camera was in use or does not exist. " + e.getMessage());
         }
         return c;
-
-
     }
 
 }
